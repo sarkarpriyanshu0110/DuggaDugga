@@ -1,0 +1,10 @@
+{
+  "description": "Plan and navigate Kolkata's Durga Puja with optimized routes, real-time crowd data, transport info, and food booking for a seamless festival experience.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

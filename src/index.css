@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-maroon: #7B1C1C;
+  --color-maroon-dark: #5A1212;
+  --color-maroon-light: #A02828;
+  --color-saffron: #C4622D;
+  --color-gold: #D4940A;
+  --color-gold-light: #F0B429;
+  --color-cream: #FBF5E8;
+  --color-cream-dark: #F0E6CC;
+  --color-vermillion: #E8472A;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #1a0a0a;
+  overflow: hidden;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono-data {
+  font-family: 'DM Mono', monospace;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(123,28,28,0.3); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(123,28,28,0.6); }
+
+/* Alpana pattern SVG divider utility */
+.alpana-divider {
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='16' viewBox='0 0 60 16'%3E%3Cpath d='M0 8 Q7.5 0 15 8 Q22.5 16 30 8 Q37.5 0 45 8 Q52.5 16 60 8' stroke='%23D4940A' stroke-width='1.5' fill='none' opacity='0.5'/%3E%3Ccircle cx='15' cy='8' r='2' fill='%23D4940A' opacity='0.4'/%3E%3Ccircle cx='30' cy='8' r='2' fill='%23D4940A' opacity='0.4'/%3E%3Ccircle cx='45' cy='8' r='2' fill='%23D4940A' opacity='0.4'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pathDraw {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,148,10,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(212,148,10,0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes mandapGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; }
+.animate-fadeIn { animation: fadeIn 0.4s ease forwards; }
+.animate-slideInRight { animation: slideInRight 0.4s ease forwards; }
+.animate-slideInUp { animation: slideInUp 0.5s cubic-bezier(0.32, 0.72, 0, 1) forwards; }
+.animate-pathDraw { animation: pathDraw 2s ease forwards; }
+.animate-pulse-gold { animation: pulse-gold 2s infinite; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-mandapGlow { animation: mandapGlow 2s ease-in-out infinite; }
+.animate-spin { animation: spin 1s linear infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+
+/* Bottom sheet */
+.bottom-sheet {
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(123,28,28,0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #D4940A 0%, #E8472A 50%, #7B1C1C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Festive gradient */
+.festive-gradient {
+  background: linear-gradient(135deg, #7B1C1C 0%, #A02828 30%, #C4622D 70%, #D4940A 100%);
+}
+
+/* Shimmer loading */
+.shimmer {
+  background: linear-gradient(90deg, #f0e6cc 25%, #fdf5e0 50%, #f0e6cc 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Crowd indicators */
+.crowd-low { background: #22c55e; }
+.crowd-medium { background: #f59e0b; }
+.crowd-high { background: #ef4444; }
+
+/* Range slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right, #7B1C1C var(--val, 50%), #e0d5c5 var(--val, 50%));
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #7B1C1C;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(123,28,28,0.4);
+  border: 3px solid #FBF5E8;
+}
+
+/* Tab bar */
+.tab-bar-shadow {
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+
+/* Map marker pulse */
+@keyframes markerPulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.marker-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: markerPulse 1.5s ease-out infinite;
+}
+
+/* QR pattern */
+.qr-pattern {
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 3px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 3px);
+}
